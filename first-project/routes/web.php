@@ -1,9 +1,13 @@
 <?php
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\FormController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+Route::get('/form', function () {
+    return view('Form');
 });
 // Route::get('/about', function () {
 //     return "<h1>About Page</h1>";
@@ -41,3 +45,4 @@ Route::get('/', function () {
 // });
 
 Route::get('about/{name}',[AboutController::class,'show']);
+Route::post('/submit',[FormController::class,'submit']);
