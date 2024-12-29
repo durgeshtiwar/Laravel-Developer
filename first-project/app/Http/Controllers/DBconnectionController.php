@@ -9,6 +9,7 @@ class DBconnectionController extends Controller
 {
     function DBconnection()
     {
-        return DB::select('select * from students');
+        $getStudents = DB::select('select * from students');
+        return view('Students',['getStudents'=>$getStudents]);
     }
 }
