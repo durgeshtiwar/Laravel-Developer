@@ -55,6 +55,9 @@ Route::get('/', function () {
 //     Route::post('/submit',[FormController::class,'submit']);
 // });
 
+//Request 
+Route::view('form','Form');
+Route::post('/submit',[FormController::class,'submit']);
 
 Route::get('getData',[DBconnectionController::class,'DBconnection']);
 Route::get('getApi',[FetchApiController::class,'fetchApi']);
