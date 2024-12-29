@@ -56,8 +56,10 @@ Route::get('/', function () {
 // });
 
 //Request 
+Route::view('About','About');
 Route::view('form','Form');
 Route::post('/submit',[FormController::class,'submit']);
+Route::get('/logout',[FormController::class,'logout']);
 
 Route::get('getData',[DBconnectionController::class,'DBconnection']);
 Route::get('getApi',[FetchApiController::class,'fetchApi']);
