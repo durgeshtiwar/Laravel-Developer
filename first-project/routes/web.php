@@ -3,6 +3,7 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\DBconnectionController;
 use App\Http\Controllers\FetchApiController;
+use App\Http\Controllers\FileController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -63,3 +64,7 @@ Route::get('/logout',[FormController::class,'logout']);
 
 Route::get('getData',[DBconnectionController::class,'DBconnection']);
 Route::get('getApi',[FetchApiController::class,'fetchApi']);
+
+// Upload File
+Route::view('file','UploadFile');
+Route::post('/uploadFile',[FileController::class,'uploadFile']);
