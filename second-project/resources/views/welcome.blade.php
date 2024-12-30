@@ -1,1 +1,1 @@
-<h1>Welcome in Second Page</h1>
+<h1>Welcome</h1>
