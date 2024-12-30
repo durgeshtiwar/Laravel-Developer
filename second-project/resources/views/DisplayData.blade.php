@@ -19,7 +19,8 @@
         th, td {
             border: 1px solid #ddd;
             padding: 8px;
-            text-align: left;
+            text-align: center;
+            vertical-align: middle;
         }
 
         th {
@@ -42,21 +43,28 @@
     <table>
         <thead>
             <tr>
+                <th>Id</th>
                 <th>Name</th>
                 <th>Course</th>
                 <th>Batch</th>
                 <th>City</th>
                 <th>Year</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
             @foreach($students as $std)
             <tr>
+                <td>{{$std->id}}</td>
                 <td>{{$std->name}}</td>
                 <td>{{$std->course}}</td>
                 <td>{{$std->batch}}</td>
                 <td>{{$std->city}}</td>
                 <td>{{$std->year}}</td>
+                <td>
+                    <button>Delete</button>
+                    <button>Update</button>
+                </td>
             </tr>
             @endforeach
         </tbody>
