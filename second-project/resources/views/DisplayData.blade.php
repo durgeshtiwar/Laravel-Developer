@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
     <title>Table Example</title>
     <style>
         body {
@@ -36,6 +37,12 @@
         tr:hover {
             background-color: #f1f1f1;
         }
+        .update{
+            color : green;
+        }
+        .delete{
+            color : red;
+        }
     </style>
 </head>
 <body>
@@ -62,8 +69,8 @@
                 <td>{{$std->city}}</td>
                 <td>{{$std->year}}</td>
                 <td>
-                    <button>Delete</button>
-                    <button>Update</button>
+                    <button><a  class='delete' href="{{'delete/'.$std->id}}"><i class="fa-solid fa-trash"></a></i></button>
+                    <button><a  class='update' href="{{'update/'.$std->id}}"><i class="fa-solid fa-pen-to-square"></a></i></button>
                 </td>
             </tr>
             @endforeach
