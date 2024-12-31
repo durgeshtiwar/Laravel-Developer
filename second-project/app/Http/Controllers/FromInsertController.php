@@ -44,17 +44,16 @@ class FromInsertController extends Controller
     function update(Request $request, $id)
     {
         $student = Student::find($id);
-        return $student;
-        // $student->name = $request->name;
-        // $student->course = $request->course;
-        // $student->batch = $request->batch;
-        // $student->city = $request->city;
-        // $student->year = $request->year;
-        // $student->save();
-        // if ($student) {
-        //     return redirect('formData');
-        // } else {
-        //     return"Data Not Updated";
-        // }
+        $student->name = $request->name;
+        $student->course = $request->course;
+        $student->batch = $request->batch;
+        $student->city = $request->city;
+        $student->year = $request->year;
+        $student->save();
+        if ($student) {
+            return redirect('formData');
+        } else {
+            return"Data Not Updated";
+        }
     }
 }

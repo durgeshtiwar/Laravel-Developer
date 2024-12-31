@@ -73,7 +73,7 @@
 <body>
     <div class="form-container">
         <h2>Update Form</h2>
-        <form action="/update/{$student->id}" method="post">
+        <form action="/update/{{$student->id}}" method="post">
             @csrf
             <input type="hidden" name="_method" value="put">
             <div class="form-group">
