@@ -26,6 +26,35 @@ class FromInsertController extends Controller
     {
         $getStudents = Student::all();
         return view('DisplayData',['students'=>$getStudents]);
-
+    }
+    function deleteData($id)
+    {
+        $isDeleted = Student::destroy($id);
+        if ($isDeleted) {
+            return redirect('formData');
+        } else {
+            return"Data Not Deleted";
+        }
+    }
+    function editData($id)
+    {
+        $student = Student::find($id);
+        return view('Edit',['student'=>$student]);
+    }
+    function update(Request $request, $id)
+    {
+        $student = Student::find($id);
+        return $student;
+        // $student->name = $request->name;
+        // $student->course = $request->course;
+        // $student->batch = $request->batch;
+        // $student->city = $request->city;
+        // $student->year = $request->year;
+        // $student->save();
+        // if ($student) {
+        //     return redirect('formData');
+        // } else {
+        //     return"Data Not Updated";
+        // }
     }
 }

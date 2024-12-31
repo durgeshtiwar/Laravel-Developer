@@ -70,7 +70,7 @@
                 <td>{{$std->year}}</td>
                 <td>
                     <button><a  class='delete' href="{{'delete/'.$std->id}}"><i class="fa-solid fa-trash"></a></i></button>
-                    <button><a  class='update' href="{{'update/'.$std->id}}"><i class="fa-solid fa-pen-to-square"></a></i></button>
+                    <button><a  class='update' href="{{'edit/'.$std->id}}"><i class="fa-solid fa-pen-to-square"></a></i></button>
                 </td>
             </tr>
             @endforeach
