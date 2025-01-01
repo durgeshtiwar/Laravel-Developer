@@ -56,4 +56,9 @@ class FromInsertController extends Controller
             return"Data Not Updated";
         }
     }
+    function searchStudent(Request $request)
+    {
+        $student = Student::where('name','like',"%$request->search%")->get();
+        return view('DisplayData',['students'=>$student,'search'=>$request->search]);
+    }
 }
