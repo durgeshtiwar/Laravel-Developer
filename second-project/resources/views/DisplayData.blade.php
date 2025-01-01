@@ -47,6 +47,12 @@
 </head>
 <body>
     <h1>Student Information</h1>
+    <div class="search-container">
+    <form action="" method="get">
+    <input type="text" placeholder="Search...">
+    <button type="submit">🔍</button>
+    </form>
+    </div>
     <table>
         <thead>
             <tr>
