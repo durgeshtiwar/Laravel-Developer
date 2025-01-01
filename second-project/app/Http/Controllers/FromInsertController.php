@@ -24,7 +24,7 @@ class FromInsertController extends Controller
     }
     function getData()
     {
-        $getStudents = Student::all();
+        $getStudents = Student::paginate(5);
         return view('DisplayData',['students'=>$getStudents]);
     }
     function deleteData($id)

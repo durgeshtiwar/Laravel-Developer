@@ -43,6 +43,9 @@
         .delete{
             color : red;
         }
+        .w-5.h-5{
+            width: 15px;
+        }
     </style>
 </head>
 <body>
@@ -82,5 +85,6 @@
             @endforeach
         </tbody>
     </table>
+    {{$students->links()}}
 </body>
 </html>
