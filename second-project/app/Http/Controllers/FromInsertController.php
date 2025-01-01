@@ -61,4 +61,13 @@ class FromInsertController extends Controller
         $student = Student::where('name','like',"%$request->search%")->get();
         return view('DisplayData',['students'=>$student,'search'=>$request->search]);
     }
+    function multiDelete(Request $request)
+    {
+        $isDeleted = Student::destroy($request->ids);
+        if ($isDeleted) {
+            return redirect('formData');
+        } else {
+            return"Data Not Deleted";
+        }
+    }
 }

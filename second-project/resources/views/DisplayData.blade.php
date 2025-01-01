@@ -46,6 +46,31 @@
         .w-5.h-5{
             width: 15px;
         }
+        .delete-button {
+        background-color: #ff4d4d; /* Red background */
+        color: white; /* White text */
+        border: none; /* No border */
+        border-radius: 5px; /* Rounded corners */
+        padding: 10px 20px; /* Padding for size */
+        font-size: 16px; /* Font size */
+        cursor: pointer; /* Pointer cursor on hover */
+        transition: background-color 0.3s ease; /* Smooth transition */
+        margin: 10px;
+        }
+
+        .delete-button:hover {
+        background-color: #ff1a1a; /* Darker red on hover */
+        }
+
+        .delete-button:active {
+        background-color: #e60000; /* Even darker red when clicked */
+        }
+
+        .delete-button:focus {
+        outline: none; /* Remove focus outline */
+        box-shadow: 0 0 5px #ff4d4d; /* Add a subtle glow on focus */
+        }
+
     </style>
 </head>
 <body>
@@ -58,7 +83,10 @@
     </div>
     <table>
         <thead>
+            <!-- <form action="multi-delete" method="post">
+                @csrf -->
             <tr>
+                <th>Select</th>
                 <th>Id</th>
                 <th>Name</th>
                 <th>Course</th>
@@ -71,6 +99,7 @@
         <tbody>
             @foreach($students as $std)
             <tr>
+                <td><input type="checkbox" name="ids[]" value="{{$std->id}}"></td>
                 <td>{{$std->id}}</td>
                 <td>{{$std->name}}</td>
                 <td>{{$std->course}}</td>
@@ -85,6 +114,8 @@
             @endforeach
         </tbody>
     </table>
+    <button class="delete-button" type="submit">Delete Selected</button>
+    <!-- </form> -->
     {{$students->links()}}
 </body>
 </html>
