@@ -19,3 +19,4 @@ Route::get('edit/{id}',[FromInsertController::class,'editData']);
 // Image Upload 
 Route::view('upload','Upload');
 Route::post('upload',[ImageController::class,'upload']);
+Route::get('imageList',[ImageController::class,'imageList']);

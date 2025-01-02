@@ -16,4 +16,8 @@ class ImageController extends Controller
         $img->path = $imgPath;
         return $img->save();
     } 
+    function imageList(){
+        $images = Image::all();
+        return view('DisplayImage',['images'=>$images]);
+    }
 }
