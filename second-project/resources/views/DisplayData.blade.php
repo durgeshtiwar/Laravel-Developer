@@ -83,8 +83,8 @@
     </div>
     <table>
         <thead>
-            <!-- <form action="multi-delete" method="post">
-                @csrf -->
+            <form action="multi-delete" method="post">
+                @csrf
             <tr>
                 <th>Select</th>
                 <th>Id</th>
@@ -107,15 +107,16 @@
                 <td>{{$std->city}}</td>
                 <td>{{$std->year}}</td>
                 <td>
-                    <button><a  class='delete' href="{{'delete/'.$std->id}}"><i class="fa-solid fa-trash"></a></i></button>
-                    <button><a  class='update' href="{{'edit/'.$std->id}}"><i class="fa-solid fa-pen-to-square"></a></i></button>
+                    <a  class='delete' href="{{'delete/'.$std->id}}"><i class="fa-solid fa-trash"></i></a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a  class='update' href="{{'edit/'.$std->id}}"><i class="fa-solid fa-pen-to-square"></i></a>
                 </td>
             </tr>
             @endforeach
         </tbody>
     </table>
     <button class="delete-button" type="submit">Delete Selected</button>
-    <!-- </form> -->
+    </form>
     {{$students->links()}}
 </body>
 </html>

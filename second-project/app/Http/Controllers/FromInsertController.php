@@ -58,7 +58,7 @@ class FromInsertController extends Controller
     }
     function searchStudent(Request $request)
     {
-        $student = Student::where('name','like',"%$request->search%")->get();
+        $student = Student::where('name','like',"%$request->search%")->paginate(5);
         return view('DisplayData',['students'=>$student,'search'=>$request->search]);
     }
     function multiDelete(Request $request)
