@@ -14,7 +14,13 @@ class ImageController extends Controller
         $imgPath = $pathArray[1];
         $img = new Image();
         $img->path = $imgPath;
-        return $img->save();
+        $img->save();
+        if ($img) {
+            return redirect('imageList');
+        } else {
+            return "File Not Uploaded";
+        }
+        
     } 
     function imageList(){
         $images = Image::all();

@@ -20,3 +20,7 @@ Route::get('edit/{id}',[FromInsertController::class,'editData']);
 Route::view('upload','Upload');
 Route::post('upload',[ImageController::class,'upload']);
 Route::get('imageList',[ImageController::class,'imageList']);
+
+//Layouts
+Route::view('home','HomePage');
+Route::view('login','LoginPage');
