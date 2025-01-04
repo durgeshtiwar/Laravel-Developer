@@ -8,3 +8,4 @@ Route::get('/', function () {
 });
 Route::get('getStudent',[StudentController::class,'getStudent']);
 Route::get('getOneToMany',[StudentController::class,'getOneToMany']);
+Route::get('getManyToOne',[StudentController::class,'getManyToOne']);

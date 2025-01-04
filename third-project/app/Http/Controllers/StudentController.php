@@ -18,4 +18,9 @@ class StudentController extends Controller
         $students = Student::find(1)->manyStudentBook;
         return $students;
     }
+    function getManyToOne()
+    {
+        $books = Book::with('studentBlongs')->get();
+        return $books;
+    }
 }
