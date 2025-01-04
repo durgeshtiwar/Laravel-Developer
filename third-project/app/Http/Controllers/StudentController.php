@@ -13,4 +13,9 @@ class StudentController extends Controller
         $students = Student::find(2)->studentBook;
         return $students;
     }
+    function getOneToMany()
+    {
+        $students = Student::find(1)->manyStudentBook;
+        return $students;
+    }
 }

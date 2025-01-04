@@ -11,4 +11,8 @@ class Student extends Model
     {
         return $this->hasOne('App\Models\Book','user_id');
     }
+    function manyStudentBook()
+    {
+        return $this->hasMany('App\Models\Book','user_id');
+    }
 }
