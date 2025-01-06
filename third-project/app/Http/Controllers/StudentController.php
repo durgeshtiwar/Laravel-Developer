@@ -8,6 +8,11 @@ use App\Models\Book;
 
 class StudentController extends Controller
 {
+    function getAllStudentApi()
+    {
+        $students = Student::all();
+        return $students;
+    }
     function getStudent()
     {
         $students = Student::find(2)->studentBook;
