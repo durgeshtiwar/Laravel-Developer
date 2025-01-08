@@ -14,19 +14,35 @@ class StudentController extends Controller
         $students = Student::all();
         return $students;
     }
-    function getStudent()
+    //post api function
+    function addStudentApi(Request $request)
     {
-        $students = Student::find(2)->studentBook;
-        return $students;
+        $student = New Student();
+        $student->name = $request->name;
+        $student->course = $request->course;
+        $student->batch = $request->batch;
+        $student->city = $request->city;
+        $student->year = $request->year;
+        if ($student->save()) {
+            return"Student Added";
+        } else {
+            return"Operation Failed";
+        }
+        
     }
-    function getOneToMany()
-    {
-        $students = Student::find(1)->manyStudentBook;
-        return $students;
-    }
-    function getManyToOne()
-    {
-        $books = Book::with('studentBlongs')->get();
-        return $books;
-    }
+    // function getStudent()
+    // {
+    //     $students = Student::find(2)->studentBook;
+    //     return $students;
+    // }
+    // function getOneToMany()
+    // {
+    //     $students = Student::find(1)->manyStudentBook;
+    //     return $students;
+    // }
+    // function getManyToOne()
+    // {
+    //     $books = Book::with('studentBlongs')->get();
+    //     return $books;
+    // }
 }
