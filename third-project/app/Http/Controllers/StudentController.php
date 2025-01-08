@@ -14,6 +14,7 @@ class StudentController extends Controller
         $students = Student::all();
         return $students;
     }
+
     //post api function
     function addStudentApi(Request $request)
     {
@@ -28,7 +29,22 @@ class StudentController extends Controller
         } else {
             return"Operation Failed";
         }
-        
+    }
+
+    //put api function
+    function updateStudentApi(Request $request)
+    {
+        $student = Student::find($request->id);
+        $student->name = $request->name;
+        $student->course = $request->course;
+        $student->batch = $request->batch;
+        $student->city = $request->city;
+        $student->year = $request->year;
+        if ($student->save()) {
+            return"Student Updated";
+        } else {
+            return"Operation Failed";
+        }
     }
     // function getStudent()
     // {

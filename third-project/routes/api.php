@@ -14,3 +14,4 @@ Route::get('/test',function()
 });
 Route::get('getAllStudentApi',[StudentController::class,'getAllStudentApi']);
 Route::post('addStudentApi',[StudentController::class,'addStudentApi']);
+Route::put('updateStudentApi',[StudentController::class,'updateStudentApi']);
