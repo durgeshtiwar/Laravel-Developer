@@ -8,6 +8,7 @@ use App\Models\Book;
 
 class StudentController extends Controller
 {
+    //get api function
     function getAllStudentApi()
     {
         $students = Student::all();
