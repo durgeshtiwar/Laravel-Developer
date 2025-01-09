@@ -58,6 +58,16 @@ class StudentController extends Controller
         }
         
     }
+    // search api function
+    function searchStudentApi($name)
+    {
+        $student = Student::where('name','like',"%$name%")->get();
+        if ($student) {
+            return $student;
+        } else {
+            return"No Record Found";
+        }
+    }
 
 
     // function getStudent()
