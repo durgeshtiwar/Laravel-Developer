@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 use App\Models\Student;
 use App\Models\Book;
 
@@ -18,16 +19,27 @@ class StudentController extends Controller
     //post api function
     function addStudentApi(Request $request)
     {
-        $student = New Student();
-        $student->name = $request->name;
-        $student->course = $request->course;
-        $student->batch = $request->batch;
-        $student->city = $request->city;
-        $student->year = $request->year;
-        if ($student->save()) {
-            return"Student Added";
+        $rules = [
+            'name' => 'required|min:2|max:20',
+            'course' => 'required',
+            'batch' => 'required',
+            'city' => 'required',
+        ];
+        $validation = Validator::make($request->all(), $rules);
+        if ($validation->fails()) {
+            return $validation->errors();
         } else {
-            return"Operation Failed";
+            $student = New Student();
+            $student->name = $request->name;
+            $student->course = $request->course;
+            $student->batch = $request->batch;
+            $student->city = $request->city;
+            $student->year = $request->year;
+            if ($student->save()) {
+                return"Student Added";
+            } else {
+                return"Operation Failed";
+            }
         }
     }
 

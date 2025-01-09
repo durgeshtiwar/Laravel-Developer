@@ -13,7 +13,6 @@ Route::get('/test',function()
     return ['name'=>'durgesh tiwari','age'=>'21'];
 });
 Route::get('getAllStudentApi',[StudentController::class,'getAllStudentApi']);
-Route::get('getAllStudentApi',[StudentController::class,'getAllStudentApi']);
 Route::post('addStudentApi',[StudentController::class,'addStudentApi']);
 Route::put('updateStudentApi',[StudentController::class,'updateStudentApi']);
 Route::delete('deleteStudentApi/{id}',[StudentController::class,'deleteStudentApi']);
