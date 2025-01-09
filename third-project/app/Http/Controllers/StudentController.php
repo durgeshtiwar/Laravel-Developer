@@ -46,6 +46,20 @@ class StudentController extends Controller
             return"Operation Failed";
         }
     }
+
+    // delete api function
+    function deleteStudentApi($id)
+    {
+        $student = Student::destroy($id);
+        if ($student) {
+            return"Student Deleted";
+        } else {
+            return"Operation Failed";
+        }
+        
+    }
+
+
     // function getStudent()
     // {
     //     $students = Student::find(2)->studentBook;
