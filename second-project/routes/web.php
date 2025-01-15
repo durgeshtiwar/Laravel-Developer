@@ -8,6 +8,8 @@ Route::get('/', function () {
 });
 Route::view('form','Form');
 Route::view('formData','DisplayData');
+Route::view('loginForm','LoginForm');
+Route::post('loginStudent',[FromInsertController::class,'loginStudent']);
 Route::get('formData',[FromInsertController::class,'getData']);
 Route::get('searchStudent',[FromInsertController::class,'searchStudent']);
 Route::post('submit',[FromInsertController::class,'submit']);

@@ -70,4 +70,14 @@ class FromInsertController extends Controller
             return"Data Not Deleted";
         }
     }
+    function loginStudent(Request $request)
+    {
+        $student = Student::find($request->id);
+        if ($student) {
+            return "<h1>Welcome ".$student->name."</h1>";
+        } else {
+            return "User Create First";
+        }
+        
+    }
 }
