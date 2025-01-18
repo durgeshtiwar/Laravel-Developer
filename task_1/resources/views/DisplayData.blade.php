@@ -86,11 +86,11 @@
                 <th>Select</th>
                 <th>Id</th>
                 <th>Name</th>
-                <th>Course</th>
-                <th>Batch</th>
-                <th>City</th>
-                <th>Year</th>
-                <th>Actions</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Address</th>
+                <th>Degree</th>
+                <th>Certificate</th>
             </tr>
         </thead>
         <tbody>
@@ -99,10 +99,11 @@
                 <td><input type="checkbox" name="ids[]" value="{{$std->id}}"></td>
                 <td>{{$std->id}}</td>
                 <td>{{$std->name}}</td>
-                <td>{{$std->course}}</td>
-                <td>{{$std->batch}}</td>
-                <td>{{$std->city}}</td>
-                <td>{{$std->year}}</td>
+                <td>{{$std->email}}</td>
+                <td>{{$std->phone}}</td>
+                <td>{{$std->address}}</td>
+                <td>{{$std->degree}}</td>
+                <td>{{$std->certificate}}</td>
                 <td>
                     <a  class='delete' href="{{'delete/'.$std->id}}"><i class="fa-solid fa-trash"></i></a>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
