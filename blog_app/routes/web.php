@@ -9,10 +9,11 @@ Route::get('/', function () {
 });
 
 //Normal method_1 
-Route::get('blog',[BlogController_2::class,'index'])->name('blog.index');
-Route::get('blog/create',[BlogController_2::class,'create'])->name('blog.create');
-Route::get('blog/{blog}',[BlogController_2::class,'show'])->name('blog.show');
-Route::get('blog/{blog}/edit',[BlogController_2::class,'edit'])->name('blog.edit');
+Route::view('create','blog.create');
+Route::get('blog',[BlogController_2::class,'index']);
+Route::post('submit',[BlogController_2::class,'submit']);
+Route::get('blog/{blog}',[BlogController_2::class,'show']);
+Route::get('blog/{blog}/edit',[BlogController_2::class,'edit']);
 
 //Resource controller
 //Route::resource('blog', BlogController::class);
