@@ -10,11 +10,8 @@ class WeatherController extends Controller
     public function fetchWeather()
     {
         $weatherResponse = [];
-        $result = Http::get('https://api.weatherapi.com/v1/current.json?key=b16ce6c940c14817a26113929242309&q=delhi');
-        $weatherResponse = $result->json();
+        $weatherResponse = Http::get('https://api.weatherapi.com/v1/current.json?key=b16ce6c940c14817a26113929242309&q=delhi');
         echo"<pre>";
-        var_dump($weatherResponse);
-        //print_r($result);
-        // return view('Api',['result'=>json_decode($result)]);
+        return view('weather',['result'=>json_decode($weatherResponse)]);
     }
 }
