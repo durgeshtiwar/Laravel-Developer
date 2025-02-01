@@ -21,3 +21,4 @@ Route::get('/', function () {
 
 //Profile images
 Route::match(["get","post"],"create-user",[UserController::class,"create"])->name("user.create");
+Route::get("getUsers",[UserController::class,"getUsers"])->name("user.getUsers");

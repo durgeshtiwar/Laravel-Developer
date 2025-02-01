@@ -32,6 +32,10 @@ class UserController extends Controller
         }else{
             return view("create");
         }
-        
+    }
+    public function getUsers()
+    {
+        $users = User::all();
+        return view("getUsers",["users"=>$users]);
     }
 }
