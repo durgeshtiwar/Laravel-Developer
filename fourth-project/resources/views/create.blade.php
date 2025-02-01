@@ -37,10 +37,7 @@
         
         <div>
             <label class="block text-gray-700">Profile Image</label>
-            <input type="file" name="profile" class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
-            @error("profile")
-            <div class="text-red-500 font-bold">{{$message}}</div>
-            @enderror
+            <input type="file" name="profile_image" class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
         </div>
         <button type="submit" class="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600">Register</button>
     </form>
