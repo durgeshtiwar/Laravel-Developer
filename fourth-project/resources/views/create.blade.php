@@ -8,29 +8,40 @@
     <title>Form</title>
 </head>
 <body class="flex items-center justify-center h-screen bg-gray-100">
-    <form class="bg-white p-6 rounded-lg shadow-lg w-96 space-y-4">
+    <form class="bg-white p-6 rounded-lg shadow-lg w-96 space-y-4" action="{{route('user.create')}}" method="post" enctype="multipart/form-data">
+    @csrf
         <h2 class="text-2xl font-bold text-center">Register</h2>
-        
         <div>
             <label class="block text-gray-700">Name</label>
-            <input type="text" class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter your name" required>
+            <input type="text" name="name" class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter your name" required>
+            @error("name")
+            <div class="text-red-500 font-bold">{{$message}}</div>
+            @enderror
         </div>
         
         <div>
             <label class="block text-gray-700">Email</label>
-            <input type="email" class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter your email" required>
+            <input type="email" name="email" class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter your email" required>
+            @error("email")
+            <div class="text-red-500 font-bold">{{$message}}</div>
+            @enderror
         </div>
         
         <div>
             <label class="block text-gray-700">Password</label>
-            <input type="password" class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter your password" required>
+            <input type="password" name="password" class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter your password" required>
+            @error("password")
+            <div class="text-red-500 font-bold">{{$message}}</div>
+            @enderror
         </div>
         
         <div>
             <label class="block text-gray-700">Profile Image</label>
-            <input type="file" class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <input type="file" name="profile" class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+            @error("profile")
+            <div class="text-red-500 font-bold">{{$message}}</div>
+            @enderror
         </div>
-        
         <button type="submit" class="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600">Register</button>
     </form>
 </body>
